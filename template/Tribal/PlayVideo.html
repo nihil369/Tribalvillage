@@ -1,0 +1,15 @@
+{% include 'Tribal/TribalPageHeader.html' %}
+<html>
+<body>
+
+<h1 style="width:90%; margin-left:5%; ">Video</h1>
+<div style="width:90%; margin-left:5%; ">
+<video width="620" height="440" controls>
+  <source src="static/files/{{session['id']}}" type="video/mp4">
+
+  Your browser does not support the video tag.
+</video>
+</div>
+</body>
+</html>
+{% include 'LoginFooter.html' %}

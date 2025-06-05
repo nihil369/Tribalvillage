@@ -1,0 +1,55 @@
+{% include 'Tribal/TribalPageHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+
+<form id="form1" name="form1" method="post" action="/EditCulturalActivities">
+    <table width="318" border="0" align="center" id="cs" style="width:90%; margin-left:5%; ">
+            <tr><th colspan="2"><h2>Edit Cultural Activities</h2></th></tr>
+ <input type="hidden" name="id" id="dd" value="{{ data['idcultural_activities'] }}">
+                <tr><th>Name</th><td><input name="TxtName" type="text" value="{{ data['activity_name'] }}" required ></td></tr><br>
+            <tr><th>Duration</th><td><input name="TxtDuration" type="text"  value="{{ data['duration'] }}" required ></td></tr><br>
+             <tr><th>Description</th><td><textarea name="TxtDescription"   required> {{ data['description'] }}</textarea></td></tr><br>
+              <tr><th>Amount</th><td><input name="TxtAmount" type="number"  value="{{ data['amount'] }}" required ></td></tr><br>
+
+
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <label>
+                        <input type="submit" name="Submit" value="Submit"  class="section-btn"/>
+                    </label>
+                </td>
+            </tr>
+        </table>
+
+</form>
+</body>
+</html>
+
+{% include 'LoginFooter.html' %}

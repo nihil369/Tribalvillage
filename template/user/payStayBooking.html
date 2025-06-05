@@ -1,0 +1,54 @@
+{% include 'User/UserPageHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+
+<form id="form1" name="form1" method="post" action="makepaymentstay">
+
+        <table width="318" border="0" align="center" id="cs" style="width:50%; margin-left:30%; ">
+            <tr><th colspan="2"><h2>Proceed Payment</h2></th></tr>
+                <input type="hidden" value="{{data}}" name="id">
+                <tr><th>Pay</th><td><input name="total" value="{{amount}}" type="text" readonly ></td></tr><br>
+
+
+
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <label>
+                        <input type="submit" name="Submit" value="Pay"  class="section-btn"/>
+                    </label>
+                </td>
+            </tr>
+        </table>
+
+</form>
+</body>
+</html>
+
+{% include 'LoginFooter.html' %}

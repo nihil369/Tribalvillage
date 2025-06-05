@@ -1,0 +1,75 @@
+{% include 'Tribal/TribalPageHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+
+
+<form id="form1" name="form1" method="post" action="uploadimagevideo" enctype = "multipart/form-data">
+
+        <table width="318" border="0" id="cs" style="width:90%; margin-left:5%; ">
+            <tr><th colspan="2"><h2>Add Image/Video</h2></th></tr>
+            <input type="hidden" name="TxtRid" value="{{id}}"/>
+            <tr>
+                <td>File type</td>
+                <td>
+                    <label>
+                        <select name="TxtType" required >
+                            <option value="" selected></option>
+                            <option value="video">Video</option>
+                            <option value="image">Image</option>
+
+                        </select>
+
+                    </label>
+                </td>
+            </tr>
+              <tr>
+                <td>File Description</td>
+                <td>
+                   <textarea name="TxtDesc" required></textarea>
+                </td>
+            </tr>
+
+             <tr>
+                <td>Image</td>
+                <td>
+                    <label>
+                        <input type="file" name="TxtImage" required />
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <label>
+                        <input type="submit" name="Submit" value="Submit"   />
+                    </label>
+                </td>
+            </tr>
+        </table>
+
+</form>
+</body>
+</html>
+{% include 'LoginFooter.html' %}
+

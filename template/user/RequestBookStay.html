@@ -1,0 +1,59 @@
+{% include 'User/UserPageHeader.html' %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+
+<form id="form1" name="form1" method="post" action="RequestBookStayform">
+
+        <table width="318" border="0" align="center" id="cs" style="width:90%; margin-left:5%; ">
+            <tr><th colspan="2"><h2>Send Village Stay Book Request</h2></th></tr>
+                <input type="hidden" value="{{data}}" name="id">
+
+<!--                <tr><th>Activity Name</th><td><input name="TxtName" value="{{activity}}" type="text" readonly ></td></tr><br>-->
+                <tr><th>Stay Rate Per Head</th><td><input name="ticket_price" value="{{rate}}" type="text" readonly ></td></tr><br>
+<!--            <tr><th>Duration</th><td><input name="Duration" type="text" value="{{duration}}" readonly ></td></tr><br>-->
+            <tr><th>Booking Date</th><td><input name="date" type="date"  required ></td></tr><br>
+             <tr><th>Add Suggestions</th><td><textarea name="query" required></textarea></td></tr><br>
+              <tr><th>Tickets</th><td><input name="no_of_people" type="number" min="1" required ></td></tr><br>
+
+
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <label>
+                        <input type="submit" name="Submit" value="Submit"  class="section-btn"/>
+                    </label>
+                </td>
+            </tr>
+        </table>
+
+</form>
+</body>
+</html>
+
+{% include 'LoginFooter.html' %}

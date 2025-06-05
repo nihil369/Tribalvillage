@@ -1,0 +1,49 @@
+{% include 'User/UserPageHeader.html' %}
+<head>
+    <style>
+       <style>
+         #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+<h2 style="width:90%; margin-left:5%; ">View Uploaded Image</h2>
+<table id="cs" style="width:90%; margin-left:5%; ">
+    <tr>
+        <td><h4><div >Sl.No</div></h4></td>
+        <td><h4><div >Details</div></h4> </td>
+         <td><h4><div >Posted Date</div></h4> </td>
+        <td><h4><div >Image</div></h4> </td>
+    </tr>
+    {% for row in data %}
+  <tr>
+      <td height="87"><div >{{ loop.index }}</div></td>
+      <td><div >{{ row['file_description'] }}</div></td>
+      <td><div >{{ row['posted_date'] }}</div></td>
+
+      <td><div ><img height="200" width="200" src="static/files/{{ row['file_path'] }}"></div></td>
+
+
+
+        {% endfor %}
+
+
+</table>
+{% include 'LoginFooter.html' %}
